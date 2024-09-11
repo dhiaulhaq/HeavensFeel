@@ -1,0 +1,26 @@
+[
+    {
+        "CemeteryId": 1,
+        "name": "Single",
+        "size": "1.5 x 3 Meter",
+        "holes": 1,
+        "description": "Lorem ipsum odor amet, consectetuer adipiscing elit. Venenatis fusce sit nisl mauris risus etiam; adipiscing potenti. Vivamus nunc dictum tellus duis fermentum laoreet. Facilisi nam nascetur rutrum faucibus; porta iaculis volutpat himenaeos. Elit at sociosqu pulvinar ut duis. Suscipit aliquet aenean, nunc ipsum dapibus lacus. Mattis nibh erat dapibus nunc etiam. Eleifend metus sem risus penatibus purus rhoncus praesent vivamus. Class dignissim habitant pellentesque ridiculus orci sit ornare; fringilla in.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczOVvoA7eVxOtUa0pDiRFKcEbjaY7aqayCy_WPiKAx_wK5JUUrF_WY6KOpO473byR_zWNa9M3bgEhBG37C11chhOWEEsripPpiCdMZmza33dSIE5GaOWERrqByio4zVgMXmddfnyO9eKrRTi-zWl8baa=w968-h645-s-no-gm?authuser=0"
+    },
+    {
+        "CemeteryId": 1,
+        "name": "Double",
+        "size": "3.5 x 3.9 Meter",
+        "holes": 2,
+        "description": "Lorem ipsum odor amet, consectetuer adipiscing elit. Venenatis fusce sit nisl mauris risus etiam; adipiscing potenti. Vivamus nunc dictum tellus duis fermentum laoreet. Facilisi nam nascetur rutrum faucibus; porta iaculis volutpat himenaeos. Elit at sociosqu pulvinar ut duis. Suscipit aliquet aenean, nunc ipsum dapibus lacus. Mattis nibh erat dapibus nunc etiam. Eleifend metus sem risus penatibus purus rhoncus praesent vivamus. Class dignissim habitant pellentesque ridiculus orci sit ornare; fringilla in.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczMlaCaOIeRIKZRcyoY6PvJGBCe_S4kmsMZhrVmSK2-ocaWJgEGUkbeBx8NYablgDVpTOhTk9qJZ9lNArcsvfzEBffE0jgO7BrNDOXK-GPvqBFRIw-kUAQ5ARiBFDIykK1o6Vjy36gwQKGp1GPmEgGuF=w968-h645-s-no-gm?authuser=0"
+    },
+    {
+        "CemeteryId": 1,
+        "name": "Family",
+        "size": "3.5 x 7.5 Meter",
+        "holes": 4,
+        "description": "Lorem ipsum odor amet, consectetuer adipiscing elit. Venenatis fusce sit nisl mauris risus etiam; adipiscing potenti. Vivamus nunc dictum tellus duis fermentum laoreet. Facilisi nam nascetur rutrum faucibus; porta iaculis volutpat himenaeos. Elit at sociosqu pulvinar ut duis. Suscipit aliquet aenean, nunc ipsum dapibus lacus. Mattis nibh erat dapibus nunc etiam. Eleifend metus sem risus penatibus purus rhoncus praesent vivamus. Class dignissim habitant pellentesque ridiculus orci sit ornare; fringilla in.",
+        "image": "https://lh3.googleusercontent.com/pw/AP1GczPhl6ysdsGV9rBxDqyAO5yMlpwzXopuWRnI5sE-rbu-UGbuFTwVdbUoNZpyiIuYWQ76GzsFzdrsyAW_BYtTcfO7MhzTI6I5AHs1rLb7aD5uTpzO542sgLZ2J4mfyUehVgLouIgCwdzywzO6LF_bybDc=w860-h645-s-no-gm?authuser=0"
+    }
+]
