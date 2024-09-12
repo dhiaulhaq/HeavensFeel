@@ -2,7 +2,7 @@ const router = require('express').Router()
 const Controller = require('../controllers/controller')
 
 router.get('/', (req, res) => {
-    res.render('index')
+    res.render('detail')
 })
 router.get('/index', Controller.renderHome)
 router.get('/lahan', Controller.renderGrave)
