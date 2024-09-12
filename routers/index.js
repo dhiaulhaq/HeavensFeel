@@ -7,5 +7,6 @@ router.get('/', (req, res) => {
 router.get('/index', Controller.renderHome)
 router.get('/lahan', Controller.renderGrave)
 router.get('/pemakaman', Controller.renderCemetery)
+router.get('/lahan/:id', Controller.detailGrave)
 
 module.exports = router;
