@@ -56,9 +56,9 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto">
-                        <a href="index.html" class="nav-item nav-link active">Beranda</a>
-                        <a href="pemakaman.html" class="nav-item nav-link">Pemakaman</a>
-                        <a href="lahan.html" class="nav-item nav-link">Lahan</a>
+                        <a href="index.html" class="nav-item nav-link <%= page == 'beranda' ? 'active' : '' %>">Beranda</a>
+                        <a href="pemakaman.html" class="nav-item nav-link <%= page == 'pemakaman' ? 'active' : '' %>">Pemakaman</a>
+                        <a href="lahan.html" class="nav-item nav-link <%= page == 'lahan' ? 'active' : '' %>">Lahan</a>
                     </div>
                     <a href="" class="btn btn-primary px-3 d-none d-lg-flex">Masuk</a>
                 </div>
