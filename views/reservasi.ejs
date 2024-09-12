@@ -7,22 +7,22 @@
         <aside class="col-lg-6">
           <div class="border rounded-4 mb-3 d-flex justify-content-center">
             <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image">
-              <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="https://lh3.googleusercontent.com/pw/AP1GczOVvoA7eVxOtUa0pDiRFKcEbjaY7aqayCy_WPiKAx_wK5JUUrF_WY6KOpO473byR_zWNa9M3bgEhBG37C11chhOWEEsripPpiCdMZmza33dSIE5GaOWERrqByio4zVgMXmddfnyO9eKrRTi-zWl8baa=w968-h645-s-no-gm?authuser=0" />
+              <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="<%= reserve.image %>" />
             </a>
           </div>
           
           <div class="ps-lg-3">
             <h4 class="title text-dark">
-                Single
+                <%= reserve.name %>
             </h4>
   
             <div class="mb-3">
-              <span class="text-primary">Al-AZHAR Memorial Garden</span>
+              <span class="text-primary"><%= reserve.Cemetery.name %></span>
             </div>
   
             <div class="row">
               <dt class="col-5">Harga:</dt>
-              <dd class="col-7 text-end">Rp. 10.000.000.00</dd>
+              <dd class="col-7 text-end"><%= getRupiah(reserve.price) %></dd>
   
               <dt class="col-5">Biaya Perawatan:</dt>
               <dd class="col-7 text-end">Rp. 100.000.00/bulan</dd>
@@ -30,7 +30,7 @@
               <hr/>
 
               <dt class="col-5 h5">Total:</dt>
-              <dd class="col-7 text-end text-primary h5">Rp. 10.100.000.00</dd>
+              <dd class="col-7 text-end text-primary h5"><%= getRupiah(reserve.totalPrice) %></dd>
             </div>
           </div>
 

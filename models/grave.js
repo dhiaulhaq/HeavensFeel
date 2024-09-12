@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       Grave.hasMany(models.Reservation)
       Grave.belongsTo(models.Cemetery)
     }
+
+    get totalPrice() {
+      return this.price + 100000
+    }
   }
   Grave.init({
     CemeteryId: DataTypes.INTEGER,

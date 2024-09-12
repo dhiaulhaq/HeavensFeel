@@ -1,24 +1,24 @@
 const { Cemetery, Grave, Reservation, ReservationDetail, User } = require('../models/index')
 const getRupiah = require('../helpers/getRupiah');
-const { where } = require('sequelize');
+const { Op, where } = require('sequelize')
 
-class Controller{
-    static async renderRegister(req, res){
-        const {errors} = req.query;
+class Controller {
+    static async renderRegister(req, res) {
+        const { errors } = req.query;
         if (errors) {
             errors = errors.split(',')
         }
 
         try {
-            res.render('register', {errors});
+            res.render('register', { errors });
         } catch (error) {
             res.send(error.message)
             console.log(error);
         }
     }
 
-    static async handleRegister(req, res){
-        const {name, email, phone, password, address} = req.body;
+    static async handleRegister(req, res) {
+        const { name, email, phone, password, address } = req.body;
         try {
             // res.send({name, email, phone, password, address});
             res.redirect('/login');
@@ -27,9 +27,9 @@ class Controller{
                 const messages = error.errors.map((el) => {
                     return el.message
                 });
-                
+
                 res.redirect(`/register?errors=${messages}`);
-            }else{
+            } else {
                 res.send(error.message);
             }
 
@@ -37,10 +37,10 @@ class Controller{
         }
     }
 
-    static async renderLogin(req, res){
-        const {errors} = req.query;
+    static async renderLogin(req, res) {
+        const { errors } = req.query;
         try {
-            res.render('login', {errors});
+            res.render('login', { errors });
         } catch (error) {
             if (error.name === 'SequelizeValidationError') {
                 let messages = error.errors.map(el => el.message);
@@ -53,8 +53,8 @@ class Controller{
         }
     }
 
-    static async handleLogin(req, res){
-        const {} = req.body;
+    static async handleLogin(req, res) {
+        const { } = req.body;
         try {
             res.redirect('/');
         } catch (error) {
@@ -68,9 +68,25 @@ class Controller{
     }
 
     static async renderHome(req, res) {
+        const { keyword, city } = req.query
         try {
+            let where = {}
+
+            if (keyword) {
+                where.name = {
+                    [Op.iLike]: `%${keyword}%`
+                }
+            }
+            if (city) {
+                where.city = {
+                    [Op.iLike]: `%${city}%`
+                }
+            }
             let home = await Grave.findAll({
-                include: Cemetery
+                include: {
+                    model: Cemetery,
+                    where
+                }
             })
             res.render('index', { home, getRupiah })
             // res.send(home)
@@ -112,6 +128,21 @@ class Controller{
         } catch (error) {
             res.send(error.message);
             console.log(error);
+        }
+    }
+
+    static async renderReservation(req, res) {
+        const { id } = req.params
+        try {
+            const reserve = await Grave.findOne({
+                include: Cemetery,
+                where: {
+                    id
+                }
+            })
+            res.render('reservasi', { reserve, getRupiah })
+        } catch (error) {
+
         }
     }
 }
