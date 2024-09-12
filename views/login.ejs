@@ -2,45 +2,36 @@
 
 <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
-    <style>
-      .rounded-t-5 {
-        border-top-left-radius: 0.5rem;
-        border-top-right-radius: 0.5rem;
-      }
-  
-      @media (min-width: 992px) {
-        .rounded-tr-lg-0 {
-          border-top-right-radius: 0;
-        }
-  
-        .rounded-bl-lg-5 {
-          border-bottom-left-radius: 0.5rem;
-        }
-      }
-    </style>
     <br><br>
     <div class="container">
         <div class="card mb-3">
             <div class="row g-0 d-flex align-items-center">
               <div class="col-lg-4 d-none d-lg-flex">
-                <img src="img/auth.jpg" alt="Auth-img"
+                <img src="img/auth.jpg" alt="auth-image"
                   class="w-100 rounded-t-5 rounded-tr-lg-0 rounded-bl-lg-5" />
               </div>
               <div class="col-lg-8">
                 <div class="card-body py-5 px-md-5">
                     <h2 class="fw-bold">Selamat datang!</h2>
                     <p class="mb-5">Silahkan masuk terlebih dahulu untuk dapat melakukan reservasi.</p>
+
+                    <% if (errors) { %>
+                      <div class="alert alert-danger" role="alert">
+                        <p><%= errors %></p>
+                      </div>
+                    <% } %>
+
                   <form method="post">
                     <!-- Email input -->
                     <div data-mdb-input-init class="form-outline mb-4">
+                      <label class="form-label" for="email">Email:</label>
                       <input type="email" id="email" name="email" class="form-control" />
-                      <label class="form-label" for="email">Email</label>
                     </div>
         
                     <!-- Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
+                      <label class="form-label" for="password">Password:</label>
                       <input type="password" id="password" name="password" class="form-control" />
-                      <label class="form-label" for="password">Password</label>
                     </div>
         
                     <!-- 2 column grid layout for inline styling -->
@@ -64,7 +55,7 @@
 
                     <!-- Login buttons -->
                     <div class="text-center">
-                        <p>Belum punya akun? Daftar di <a href="/">sini</a></p>
+                        <p>Belum punya akun? Daftar di <a href="/register">sini</a></p>
                     </div>
         
                   </form>

@@ -15,12 +15,77 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Nama tidak ada'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Nama tidak boleh kosong'
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Email tidak ada'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Email tidak boleh kosong'
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Password tidak ada'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Password tidak boleh kosong'
+        }
+      }
+    },
     role: DataTypes.STRING,
-    address: DataTypes.STRING,
-    phone: DataTypes.STRING
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Alamat tidak ada'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Alamat tidak boleh kosong'
+        }
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          args: true,
+          msg: 'Nomor Telepon tidak ada'
+        },
+        notEmpty: {
+          args: true,
+          msg: 'Nomor Telepon tidak boleh kosong'
+        }
+      }
+    }
   }, {
     sequelize,
     modelName: 'User',

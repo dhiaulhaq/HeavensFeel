@@ -2,17 +2,6 @@
 
 <!-- Section: Design Block -->
 <section class="text-center text-lg-start">
-  <style>
-    .cascading-right {
-      margin-right: -50px;
-    }
-
-    @media (max-width: 991.98px) {
-      .cascading-right {
-        margin-right: 0;
-      }
-    }
-  </style>
 
   <!-- Jumbotron -->
   <div class="container py-4">
@@ -21,42 +10,49 @@
         <div class="card cascading-right bg-body-tertiary" style="
             backdrop-filter: blur(30px);
             ">
-          <div class="card-body p-5 shadow-5 text-center">
-            <h2 class="fw-bold mb-5">Daftar Sekarang</h2>
+          <div class="card-body p-5 shadow-5">
+            <h2 class="fw-bold mb-5 text-center">Daftar Sekarang</h2>
+
+            <% if (errors) { %>
+              <div class="alert alert-danger" role="alert">
+                <p><%= errors %></p>
+              </div>
+            <% } %>
+
             <form method="post">
 
               <!-- Full Name input -->
               <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="name">Nama Lengkap:</label>
                 <input type="text" name="name" id="name" class="form-control" />
-                <label class="form-label" for="name">Nama Lengkap</label>
               </div>
 
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="email">Email:</label>
                     <input type="email" name="email" id="email" class="form-control" />
-                    <label class="form-label" for="email">Email</label>
                   </div>
                 </div>
                 <div class="col-md-6 mb-4">
                   <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="phone">No. Telepon:</label>
                     <input type="tel" name="phone" id="phone" class="form-control" />
-                    <label class="form-label" for="phone">No. Telepon</label>
                   </div>
                 </div>
               </div>
 
               <!-- Password input -->
               <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="password">Password:</label>
                 <input type="password" name="password" id="password" class="form-control" />
-                <label class="form-label" for="password">Password</label>
               </div>
 
               <!-- Address input -->
               <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="address">Alamat:</label>
                 <textarea name="address" id="address" class="form-control"></textarea>
-                <label class="form-label" for="address">Alamat</label>
               </div>
 
               <!-- Submit button -->
@@ -66,7 +62,7 @@
 
               <!-- Login buttons -->
               <div class="text-center">
-                <p>Sudah punya akun? Masuk di <a href="/">sini</a></p>
+                <p>Sudah punya akun? Masuk di <a href="/login">sini</a></p>
               </div>
             </form>
           </div>
@@ -75,7 +71,7 @@
 
       <div class="col-lg-5 mb-5 mb-lg-0">
         <img src="/img/auth.jpg" class="w-100 rounded-4 shadow-4"
-          alt="" />
+          alt="auth-image" />
       </div>
     </div>
   </div>
