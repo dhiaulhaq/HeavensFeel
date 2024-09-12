@@ -28,65 +28,25 @@
                     <div class="tab-pane fade show p-0 active">
                         <div class="row g-4">
 
-                            <!-- CARD 1 -->
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="content-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/makam-single-varian.jpg" alt=""></a>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Al Azhar Memorial Garden</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">Rp10.000.000</h5>
-                                        <a class="d-block h5 mb-2" href="">Single Varian</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Jl. Raya Peruri No. KM 53 - 54, Pinayungan, Telukjambe Timur, Karawang, Jawa Barat 41361</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>4 x 3 Meter</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user text-primary me-2"></i>2 Lubang</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CARD 1 -->
-
-                            <!-- CARD 2 -->
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="content-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/makam-single-varian.jpg" alt=""></a>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Al Azhar Memorial Garden</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">Rp10.000.000</h5>
-                                        <a class="d-block h5 mb-2" href="">Single Varian</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Jl. Raya Peruri No. KM 53 - 54, Pinayungan, Telukjambe Timur, Karawang, Jawa Barat 41361</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>4 x 3 Meter</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user text-primary me-2"></i>2 Lubang</small>
+                            <% graves.forEach((el) => { %>
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="content-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href=""><img class="img-fluid" src="<%= el.image %>" alt=""></a>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3"><%= el.Cemetery.name %></div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3"><%= getRupiah(el.price) %></h5>
+                                            <a class="d-block h5 mb-2" href="<%= el.name %>"><%= el.name %></a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i><%= el.Cemetery.address %> <%= el.Cemetery.city %></p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i><%= el.size %></small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user text-primary me-2"></i><%= el.holes %></small>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- END CARD 2 -->
-
-                            <!-- CARD 3 -->
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                                <div class="content-item rounded overflow-hidden">
-                                    <div class="position-relative overflow-hidden">
-                                        <a href=""><img class="img-fluid" src="img/makam-single-varian.jpg" alt=""></a>
-                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Al Azhar Memorial Garden</div>
-                                    </div>
-                                    <div class="p-4 pb-0">
-                                        <h5 class="text-primary mb-3">Rp10.000.000</h5>
-                                        <a class="d-block h5 mb-2" href="">Single Varian</a>
-                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>Jl. Raya Peruri No. KM 53 - 54, Pinayungan, Telukjambe Timur, Karawang, Jawa Barat 41361</p>
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>4 x 3 Meter</small>
-                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-user text-primary me-2"></i>2 Lubang</small>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- END CARD 3 -->
+                                <% })%>                          
 
                         </div>
                     </div>
