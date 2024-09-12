@@ -1,0 +1,58 @@
+<%- include('_nav', {page: 'detail'}) %>
+
+  <!-- content -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row gx-5">
+        <aside class="col-lg-6">
+          <div class="border rounded-4 mb-3 d-flex justify-content-center">
+            <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image">
+                <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="<%= detail.image %>" />
+              </a>
+            </div>
+          </aside>
+          <main class="col-lg-6">
+            <div class="ps-lg-3">
+              <h4 class="title text-dark">
+                <%= detail.name %>
+              </h4>
+              
+              <div class="mb-3">
+                <span class="text-primary h5"><%= getRupiah(detail.price) %></span>
+              </div>
+              
+              <p>
+                <%= detail.Cemetery.description %>
+              </p>
+              
+              <div class="row">
+                <dt class="col-3">Ukuran:</dt>
+                <dd class="col-9"><%= detail.size %></dd>
+                
+                <dt class="col-3">Lubang:</dt>
+                <dd class="col-9"><%= detail.holes %></dd>
+                
+                <dt class="col-3">Pemakaman:</dt>
+                <dd class="col-9"><%= detail.Cemetery.name %></dd>
+                
+                <dt class="col-3">Lokasi:</dt>
+                <dd class="col-9"><%= detail.Cemetery.address %></dd>
+                
+                <dt class="col-3">Kota:</dt>
+                <dd class="col-9"><%= detail.Cemetery.city %></dd>
+                
+                <dt class="col-3">No. Telepon:</dt>
+                <dd class="col-9"><%= detail.Cemetery.phone %></dd>
+              </div>
+            </div>
+  
+            <hr />
+
+            <a href="/lahan/<%= detail.id %>/reservation" class="btn btn-warning shadow-0">Reservasi Sekarang</a>
+          </div>
+        </main>
+      </div>
+    </section>
+  <!-- content -->
+
+<%- include('_footer') %>

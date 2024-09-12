@@ -1,0 +1,82 @@
+<%- include('_nav', { page: 'register' }) %>
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right bg-body-tertiary" style="
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5">
+            <h2 class="fw-bold mb-5 text-center">Daftar Sekarang</h2>
+
+            <% if (errors) { %>
+              <div class="alert alert-danger" role="alert">
+                <p><%= errors %></p>
+              </div>
+            <% } %>
+
+            <form method="post">
+
+              <!-- Full Name input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="name">Nama Lengkap:</label>
+                <input type="text" name="name" id="name" class="form-control" />
+              </div>
+
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="email">Email:</label>
+                    <input type="email" name="email" id="email" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div data-mdb-input-init class="form-outline">
+                    <label class="form-label" for="phone">No. Telepon:</label>
+                    <input type="tel" name="phone" id="phone" class="form-control" />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="password">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" />
+              </div>
+
+              <!-- Address input -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="address">Alamat:</label>
+                <textarea name="address" id="address" class="form-control"></textarea>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                Daftar
+              </button>
+
+              <!-- Login buttons -->
+              <div class="text-center">
+                <p>Sudah punya akun? Masuk di <a href="/login">sini</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 mb-5 mb-lg-0">
+        <img src="/img/auth.jpg" class="w-100 rounded-4 shadow-4"
+          alt="auth-image" />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+
+<%- include('_footer') %>
